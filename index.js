@@ -92,7 +92,7 @@ Ajv.prototype.getSuperSchema = function(schema) {
     return schema
   }
   // Too bad for cloning objects... =/
-  const resSchema = JSON.parse(JSON.stringify(schema))
+  let resSchema = JSON.parse(JSON.stringify(schema))
   
   if(resSchema.type === "array") 
     resSchema.items = this.processProps(resSchema.items);
